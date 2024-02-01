@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFC BANK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #dbdbdb;
+        }
+
+        header {
+            background-color: rgba(14, 14, 94, 0.804);
+            color: #fff;
+            display: flex;
+            height: 80px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            margin-left: 350px;
+            margin-right: 0%;
+            width: 115px;
+            height: 65px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        nav {
+            display: initial;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+            margin: 10 10px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            border-bottom: 1px solid #fff;
+        }
+
+        .contact-locate {
+            padding-right: 480px;
+        }
+
+        .contact-locate a {
+            padding: 17px;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .topnav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 25px 166px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            font-size: 19px;
+            background-color: white;
+            color: darkblue;
+            font-weight: bold;
+            margin-left: -407px;
+            margin-right: -70px;
+        }
+
+        .topnav input[type=text] {
+            float: left;
+            border-width: 1.99px;
+            border-right: none;
+            padding: 6.5px;
+            margin-left: 10px;
+            margin-top: 16px;
+            margin-right: 100px;
+            margin-bottom: 16px;
+            font-size: 17px;
+        }
+
+        .button {
+            box-sizing: border-box;
+            border-bottom: none;
+            border-width: 1px;
+            background-color: white;
+            rotate: 270deg;
+            padding: 12px;
+            text-align: left;
+            font-size: 25px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .material-icons {
+            border-width: 1.99px;
+            margin-top: 16px;
+            margin-left: 10px;
+            font-size: 25px;
+            width: 300px;
+            height: 40px;
+            padding-left: 220px;
+            background-color: white;
+            margin-left: -104px;
+            border-left: none;
+        }
+
+        .login {
+            color: white;
+            padding-left: 42px;
+            padding-right: 20px;
+            height: 20px;
+            margin-top: 25px;
+            margin-left: -128px;
+        }
+
+        select {
+            flex: 0;
+            background: rgba(52, 166, 237, 0.918);
+            color: white;
+            height: 37px;
+            margin-top: 17px;
+            margin-left: 40px;
+            padding: 0 40px;
+            outline: 0;
+            border: 0;
+            border-radius: 2px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        .top {
+            display: flex;
+            flex-direction: row;
+            height: 450px;
+            background-color: #dbdbdb;
+        }
+
+        .slideshow-container {
+            flex: 0;
+            width: 50%;
+            max-width: 10px;
+            position: right;
+            margin: -160px;
+            padding: 170px;
+            padding-left: 350px;
+            padding-right: 490px;
+            text-align: center;
+        }
+
+        .mySlides {
+            display: none;
+            width: 1000px;
+            padding-right: 10px;
+            text-align: center;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 41%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 38%;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .maindot {
+            rotate: 180deg;
+            text-align: center;
+            padding-left: 550px;
+            padding-right: 140px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            padding-left: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+            padding: 7px;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .first {
+            border: 1px solid rgb(16, 0, 0);
+            flex: 1;
+            width: 110%;
+            margin-top: 10px;
+            height: 280px;
+            margin-bottom: 10px;
+            min-height: 1vh;
+            box-sizing: border-box;
+            background: white;
+            display: flex;
+            align-content: flex-end;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: black;
+        }
+
+        .first h5 {
+            font-size: 20px;
+            margin-top: -37px;
+            margin-bottom: 20px;
+            padding-top: 25px;
+        }
+
+        .row {
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .boxbutton {
+            text-align: center;
+            width: 230px;
+            padding: 12px;
+            margin: 10px;
+            border: 1px solid grey;
+            background-color: rgb(65, 153, 225);
+        }
+
+        .dropdown1,
+        .dropdown2 {
+            align-items: center;
+            padding: 4px;
+            font-size: 16px;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+        }
+
+        .xpress {
+            background-color: white;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 10px;
+            display: flex;
+            width: 300px;
+            border: 1px solid black;
+            height: 140px;
+        }
+
+        .xpress h3 {
+            color: red;
+            font-size: 25px;
+            display: flex;
+            align-items: left;
+            justify-content: flex-start;
+        }
+
+        .xpress h5 {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        footer {
+            height: 340px;
+            display: flex;
+            justify-content: space-around;
+            background-color: #153394;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .column {
+            width: 27%;
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: rgb(159, 156, 156);
+        }
+
+        ul {
+            border: none;
+            list-style-type: none;
+            padding: 0;
+            color: white;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .row3 {
+            height: 70px;
+            display: flex;
+            padding-bottom: 0px;
+            align-items: stretch;
+            background-color: #4965c0;
+            color: white;
+            padding-left: 260px;
+            padding-right: 260px;
+        }
+
+        .column1 {
+            flex: 1;
+            padding: 20px;
+            height: 70px;
+            border: 1px solid rgb(84, 73, 214);
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .row3 :hover {
+            background-color: white;
+            text-decoration: underline solid black;
+            color: black;
+        }
+
+        .row4 {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            padding-left: 200px;
+            padding-right: 200px;
+            color: #717171;
+            background-color: #dbdbdb;
+        }
+
+        .column2 {
+            flex: 1;
+            padding: 10px;
+            margin-right: 5px;
+            border: 1px solid black;
+        }
+
+        .row4 h2 {
+            text-align: center;
+        }
+
+        .row4 ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .row4 li {
+            margin-bottom: 5px;
+        }
+
+        .row4 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .lasoffhead {
+            color: rgb(15, 73, 220);
+            padding-left: 200px;
+        }
+
+        .lasoff {
+            background-color: white;
+            padding-left: 200px;
+            padding-right: 200px;
+            background-color: #dbdbdb;
+        }
+
+        .lasoff1 {
+            float: left;
+            width: 25%;
+            padding: 10px;
+            padding-left: 10px;
+            height: 350px;
+            border: 15px solid #dbdbdb;
+        }
+
+        .lasoff:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .third {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding-left: 200px;
+            padding-right: 100px;
+            height: 220px;
+        }
+
+        .fourth {
+            background-color: white;
+            color: black;
+            text-align: center;
+            width: 850px;
+            height: 160px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            flex-direction: row;
+        }
+
+        .fourth1 {
+            width: 33.33%;
+            float: left;
+            border: 1px solid rgb(215, 202, 202);
+            height: 160px;
+        }
+
+        .fourth1 h2,
+        .fourth2 h2,
+        .fourth3 h2 {
+            color: #4965c0;
+            font-size: 25px;
+        }
+
+        .fourth2 {
+            width: 33.33%;
+            float: inline-start;
+            padding-left: 35px;
+            border: 1px solid rgb(215, 202, 202);
+        }
+
+        .fourth3 {
+            width: 33.33%;
+            float: right;
+            border: 1px solid rgb(215, 202, 202);
+            border-bottom: none;
+        }
+
+        .third p {
+            color: black;
+        }
+
+        .fifth {
+            background-color: white;
+            text-align: center;
+            border: 1px solid black;
+            width: 640px;
+            height: 160px;
+            margin-bottom: 20px;
+        }
+
+        .fifth p {
+            color: black;
+        }
+
+        .fifth1 {
+            width: 50%;
+            float: left;
+            border: 1px solid grey;
+            height: 160px;
+        }
+
+        .fifth2 {
+            width: 50%;
+            float: right;
+            border: 1px solid grey;
+        }
+
+        .fifth1 h2 , .fifth2 h2{
+            color: #4965c0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="hdfc.img" alt="Logo">
+        </div>
+
+        <nav>
+            <a href="#">Personal</a>
+            <a href="#">NRI</a>
+            <a href="#">SME</a>
+            <a href="#">Wholesale</a>
+            <a href="#">Agri</a>
+        </nav>
+
+        <div class="contact-locate">
+            <a>📍Locate us</a>
+            <a>❔Blog</a>
+        </div>
+    </header>
+
+    <div class="topnav">
+        <a class="active" href="#Welcome!">Welcome!</a>
+        <button class="button">⌕</button>
+        <input type="text" placeholder="What are you looking for...">
+        <button class="material-icons">🎙</i></button>
+        <select></select><label for="login" class="login">LOGIN</label>
+    </div>
+
+    <div class="top">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="img1.png" style="width: 100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="img2.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="img3.png" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div class="maindot" style="text-align: calc(50% - 37px);">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <div>
+
+            <div class="first">
+                <div>
+                    <h5>Personal Banking Services</h5>
+                </div>
+                <div>
+                    <h5>What Are You Looking For?</h5>
+                </div>
+
+                <div class="row">
+                    <select class="dropdown1" style="width: 260px; height: 30px">
+                        <option selected hidden>Select Product Type</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select class="dropdown2" style="width: 260px; height: 30px">
+                        <option selected hidden>Select Product</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button class="boxbutton">APPLY ONLINE</button>
+                </div>
+            </div>
+
+            <div class="xpress">
+                <div>
+                    <h3>XpressWay</h3>
+                </div>
+                <div>
+                    <h5>Banking Products and Services</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row3">
+        <div class="column1" id="home">HOME</div>
+        <div class="column1" id="pay">PAY<br>Cards, Bill Pay</div>
+        <div class="column1" id="save">SAVE<br>Accounts, Deposits</div>
+        <div class="column1" id="invest">INVEST<br>Bonds, Mutual Funds</div>
+        <div class="column1" id="borrow">BORROW<br>Loans, EMI</div>
+        <div class="column1" id="insure">INSURE<br>Cover, Protect</div>
+        <div class="column1" id="shop">SHOP<br>Offers, Discounts</div>
+    </div>
+
+    <div class="row4">
+        <div class="column2" id="calculators">
+            <h2>Calculators For Your Needs</h2>
+            <ul>
+                <li class="calc1"><a href="#">Personal Loan EMI Calculator</a></li>
+                <li class="calc2"><a href="#">Home Loan EMI Calculator</a></li>
+                <li class="calc3"><a href="#">RD Calculator</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+            </ul>
+        </div>
+
+        <div class="column2" id="offers">
+            <h2>Offers for You</h2>
+            <ul>
+                <li><a href="#">Best-in-class Credit Cards</a></li>
+                <li><a href="#">Ready for you Bigger Savings</a></li>
+                <li><a href="#">Assured On SmartBuy C MILLENNIA VISA</a></li>
+                <li><a href="#">VIEW ALL</a></li>
+            </ul>
+        </div>
+
+        <div class="column2" id="help">
+            <h2>Need Help?</h2>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Insta Service</a></li>
+                <li><a href="#">Fraud Awareness</a></li>
+                <li><a href="#">Interest Rates</a></li>
+                <li><a href="#">NetBanking</a></li>
+                <li><a href="#">Credit Card Services</a></li>
+                <li><a href="#">Report Unauthorised / Disputed Transactions</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="latestoffer"></div>
+    <h2 class="lasoffhead">Latest Offer</h2>
+
+    <div class="lasoff">
+        <div class="lasoff1" style="background-color: white;">
+            <h2>Home Loan</h2>
+            <img src="offer1.png " width="310" height="140">
+            <p>Hurry! Limited Period Offer</p>
+        </div>
+
+        <div class="lasoff1" style="background-color: white;">
+            <h2>Personal Loan</h2>
+            <img src="offer2.png" width="310" height="140">
+            <p>Get quick funds @Best Interest rate. Hurry up!</p>
+        </div>
+
+        <div class="lasoff1" style="background-color: white;">
+            <h2>Credit Card</h2>
+            <img src="offer3.png" width="310" height="140">
+            <p>Grab the exclusive offers now</p>
+        </div>
+
+        <div class="lasoff1" style="background-color: white;">
+            <h2>Fixed Deposit</h2>
+            <img src="offer4.png" width="310" height="140">
+            <p>Limited Period offer! Best time to book FD</p>
+        </div>
+    </div>
+
+    <div class="third">
+        <div class="fourth">
+            <div class="fourth1">
+                <h2>WhatsApp Banking</h2>
+                <p>Text Hi on 920479359 <br> Enjoy 90+ Banking Services</p>
+            </div>
+
+            <div class="fourth2">
+                <h2>PayZapp</h2>
+                <p>All New PayZapp For <br> Online Payments. All New Offers!</p>
+            </div>
+
+            <div class="fourth3">
+                <h2>MobileBanking</h2>
+                <p>Get over 250+ banking <br> products and services</p>
+            </div>
+        </div>
+
+        <div class="fifth">
+
+            <div class="fifth1">
+                <h2>Premier</h2>
+                <p><b>Premier Banking</b><br> to suit every life style</p>
+            </div>
+
+            <div class="fifth1">
+                <h2>Wealth</h2>
+                <p><b>Bespoke</b><br>Wealth Solution</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="column">
+            <p>About Us</p>
+            <ul>
+                <li>Overview</li>
+                <li>Investor Relations</li>
+                <li>Careers</li>
+                <li>CSR</li>
+                <li>Link to ODR Portal</li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <p>Useful Links</p>
+            <ul>
+                <li>SmartWealth terms and conditios</li>
+                <li>Penal Charges</li>
+                <li>Privacy</li>
+                <li>Important Messages</li>
+                <li>Quick Links</li>
+                <li>Apply for Credit Card</li>
+                <li>Terms and Condition</li>
+                <li>Security</li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <p>Resources</p>
+            <ul>
+                <li>Home Loan</li>
+                <li>Ways To Banks</li>
+                <li>Rates</li>
+                <li>Fees & Charges</li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <p>Calculators</p>
+            <ul>
+                <li>Home Loan Calculator</li>
+                <li>Personal Loan Calculator</li>
+                <li>Car Loan Calculator</li>
+                <li>Two Wheler EMI Calculator</li>
+                <li>Debit Card Calculator</li>
+                <li>SIP Calculator</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>
